@@ -7,7 +7,10 @@ export default () => (
 	<div>
 		<UserNav />
 		<br />
+		<h1 className="text-center">Your Contacts</h1>
+		<hr />
 		<ContactListFilters />
+
 		<ContactList />
 	</div>
 );

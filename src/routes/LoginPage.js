@@ -18,43 +18,51 @@ class LoginPage extends React.Component {
 	}
 
 	onButtonPress(){
-		const {email} = this.state;
+		const {phoneNumber} = this.state;
 		this.setState({
-			error: ''
+			error: '',
+			phoneNumber: phoneNumber
 		});
-		firebase.auth().signInWithEmailAndPassword(email, password).catch(() => {
-			firebase.auth().createUserWithEmailAndPassword(email, password).catch(() => {
-				this.setState({
-					error: 'Authentication Failed'
-				});
-			});
-		});
+		// firebase.auth().signInWithEmailAndPassword(email, password).catch(() => {
+		// 	firebase.auth().createUserWithEmailAndPassword(email, password).catch(() => {
+		// 		this.setState({
+		// 			error: 'Authentication Failed'
+		// 		});
+		// 	});
+		// });
 	}
 
 	render(){
 		return (
-			<Card>
-				<CardSection>
-					<Input
+			<div>
+				<Nav />
+				<br />
+				<div className="container">
+					<h1 className="text-center">Login</h1>
+		    		<hr />
+					<label>Phone Number:</label>
+					<br />					
+					<input
+						type="text"
+						className="form-control"
 						value={this.state.phoneNumber}
 						placeholder="(917)2621837"
-						label="Phone Number"
 						onChangeText={phoneNumber => this.setState({ phoneNumber })}
 					/>
-				</CardSection>
 
-				<p>
-					{this.state.error}
-				</p>
-
-				<CardSection>
+					<p>
+						{this.state.error}
+					</p>
+					<br />
 					<Link to="/user/contacts">
-						<Button onClick={this.onButtonPress.bind(this)}>
+						<button
+							className="btn btn-primary"
+							onClick={this.onButtonPress.bind(this)}>
 							Log In
-						</Button>
+						</button>
 					</Link>
-				</CardSection>
-			</Card>
+				</div>
+			</div>
 		);
 	}
 }

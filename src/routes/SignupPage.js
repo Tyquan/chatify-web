@@ -21,6 +21,9 @@ const SignupPage = () => {
 		    			<label>Email</label>
 		    			<input type="text" className="form-control" />
 		    			<br />
+		    			<label>Do You have a Phone Number</label> 
+		    			<input type="checkbox" />
+		    			<br />
 		    			<label>Phone Number</label>
 		    			<input type="text" className="form-control" />
 		    			<br />
@@ -45,7 +48,7 @@ const SignupPage = () => {
 		    				</div>
 		    			</div>
 		    			<br />
-		    			<Link to="/available"><button className="btn btn-primary">Get Phone Number</button></Link>
+		    			<Link to="/user/contacts"><button className="btn btn-primary">Sign Up</button></Link>
 		    		</form>
 		    	</div>
 		    </div>

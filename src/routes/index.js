@@ -22,6 +22,10 @@ import ContactPage from './user/contact/ContactPage';
 import AddContactPage from './user/contact/AddContactPage';
 import ShowContactPage from './user/contact/ShowContactPage';
 import EditContactPage from './user/contact/EditContactPage';
+import GroupPage from './user/group/GroupPage';
+import VideoPage from './user/video/VideoPage';
+import AddGroupPage from './user/group/AddGroupPage';
+import EditGroupPage from './user/group/EditGroupPage';
 
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
@@ -82,6 +86,11 @@ export default () => (
         component={UserChatPage}
       />
       <PublicRoute
+        path="/user/video" 
+        exact={true} 
+        component={VideoPage}
+      />
+      <PublicRoute
         path="/user/contacts" 
         exact={true} 
         component={ContactPage}
@@ -100,6 +109,21 @@ export default () => (
         path="/user/contact/edit/:id"
         exact={true}
         component={EditContactPage}
+      />
+      <PublicRoute
+        path="/user/groups" 
+        exact={true} 
+        component={GroupPage}
+      />
+      <PublicRoute
+        path="/user/addGroups" 
+        exact={true} 
+        component={AddGroupPage}
+      />
+      <PublicRoute
+        path="/user/group/edit/:id"
+        exact={true}
+        component={EditGroupPage}
       />
     </Switch>
   </Router>

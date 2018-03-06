@@ -20,6 +20,12 @@ export default () => (
 	      <li className="nav-item">
 	        <Link className="nav-link" to="/user/contacts">Contacts</Link>
 	      </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/user/groups">Groups</Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/user/video">Video Chat</Link>
+        </li>
 	    </ul>
 	  </div>
     </nav>

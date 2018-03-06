@@ -11,7 +11,8 @@ const publicPath = path.join(__dirname, '..', 'public');
 const port = process.env.PORT || 3000;
 
 // mlab connection 
-const mongoUri = 'mongodb://Tyquan:Jamela17!@ds139278.mlab.com:39278/whatsvi';
+//const mongoUri = 'mongodb://Tyquan:Jamela17!@ds139278.mlab.com:39278/whatsvi';
+const mongoUri = 'mongodb://localhost/whatsvi';
 
 //const mongoUri = 'http://localhost/whatsvi'
 

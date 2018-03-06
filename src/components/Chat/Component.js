@@ -34,7 +34,7 @@ class Chat extends Component {
 		this.onFormSubmit = this.onFormSubmit.bind(this);
 	}
 
-	
+
 
 	onFormSubmit(e){
 		e.preventDefault();
@@ -56,7 +56,7 @@ class Chat extends Component {
 					<div className="col">
 						<div className="card-body">
 							<div className="card-title">
-								Chat
+								Messages
 							</div>
 							<hr />
 							<div className="messages">
@@ -81,7 +81,8 @@ class Chat extends Component {
 							<form onSubmit={this.onFormSubmit}>
 								<input className="form-control" name="username" type="text" placeholder="Username"  />
 								<br />
-								<input className="form-control" name="message" type="text" placeholder="Type Message Here"  />
+								<input className="form-control" name="message" type="text" placeholder="Type Your Message Here"  />
+								<br />
 								<button className="btn btn-primary form-control">Send</button>
 							</form>
 						</div>
