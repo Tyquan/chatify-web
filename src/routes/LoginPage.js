@@ -7,7 +7,7 @@ import Card from '../components/common/Card';
 import CardSection from '../components/common/CardSection';
 import Input from '../components/common/Input';
 import {startLogin} from '../actions/auth';
-import Nav from '../components/nav';
+import Nav from '../components/Nav';
 
 class LoginPage extends React.Component {
 	state = {
