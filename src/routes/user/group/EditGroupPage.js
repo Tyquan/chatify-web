@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import GroupForm from '../../../components/Contacts/ContactForm';
 import { editGroup, removeGroup } from '../../../actions/contacts';
-
+import UserFooter from '../../../components/UserFooter';
 
 export class EditGroupPage extends Component {
 	// constructor(props){
@@ -32,6 +32,7 @@ export class EditGroupPage extends Component {
 				>
 					Delete Group
 				</button>
+				<UserFooter />
 			</div>
 		);
 	}

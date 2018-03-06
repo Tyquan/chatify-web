@@ -8,7 +8,7 @@ import { startSetContacts } from './actions/contacts';
 import { login, logout } from './actions/auth';
 import getVisibleContacts from './selectors/contacts';
 import 'normalize.css/normalize.css';
-//import './styles/styles.scss';
+//import './styles/styles.css';
 import 'react-dates/lib/css/_datepicker.css';
 //import firebase from 'firebase';
 import { firebase } from './firebase/firebase';

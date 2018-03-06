@@ -2,6 +2,7 @@ import React from 'react';
 import UserNav from '../../../components/UserNav';
 import GroupList from '../../../components/Groups/GroupList';
 import GroupListFilters from '../../../components/Groups/GroupListFilters';
+import UserFooter from '../../../components/UserFooter';
 
 export default () => (
 	<div>
@@ -11,5 +12,6 @@ export default () => (
 		<hr />
 		<GroupListFilters />
 		<GroupList />
+		<UserFooter />
 	</div>
 );

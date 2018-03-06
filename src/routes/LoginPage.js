@@ -8,6 +8,7 @@ import CardSection from '../components/common/CardSection';
 import Input from '../components/common/Input';
 import {startLogin} from '../actions/auth';
 import Nav from '../components/Nav';
+import Footer from '../components/Footer';
 
 class LoginPage extends React.Component {
 	state = {
@@ -62,6 +63,7 @@ class LoginPage extends React.Component {
 						</button>
 					</Link>
 				</div>
+				<Footer />
 			</div>
 		);
 	}

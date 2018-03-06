@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import UserNav from '../../../components/UserNav';
 import ContactForm from '../../../components/Contacts/ContactForm';
 import { addContact } from '../../../actions/contacts';
+import UserFooter from '../../../components/UserFooter';
 
 export class AddContactPage extends React.Component {
   onSubmit = (contact) => {
@@ -18,6 +19,7 @@ export class AddContactPage extends React.Component {
         <ContactForm
           onSubmit={this.onSubmit}
         />
+        <UserFooter />
       </div>
     );
   }

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import UserNav from '../../../components/UserNav';
 import { removeContact } from '../../../actions/contacts';
+import UserFooter from '../../../components/UserFooter';
 
 const ShowContactPage = (props) => {
 	console.log(props);
@@ -22,6 +23,7 @@ const ShowContactPage = (props) => {
 			>
 				Delete Contact
 			</button>
+			<UserFooter />
 		</div>
 	);
 };

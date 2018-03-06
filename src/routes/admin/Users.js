@@ -1,27 +1,6 @@
 import React from 'react';
 import AdminNav from '../../components/AdminNav';
 
-// const users = [
-// 	{
-// 		name: 'Jennifer Birth'
-// 	},
-// 	{
-// 		name: 'Anne Nash'
-// 	},
-// 	{
-// 		name: 'John Birth'
-// 	},
-// 	{
-// 		name: 'Corey Hook'
-// 	},
-// 	{
-// 		name: 'Ronald Tanz'
-// 	}
-// ];
-// const listItems = users.map((number) => {
-// 	return <li>{number}</li>;
-// });
-
 export default () => (
   <div>
     <AdminNav />

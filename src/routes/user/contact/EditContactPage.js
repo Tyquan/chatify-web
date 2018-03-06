@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ContactForm from '../../../components/Contacts/ContactForm';
 import { editContact, removeContact } from '../../../actions/contacts';
+import UserFooter from '../../../components/UserFooter';
 
 
 export class EditContactPage extends Component {
@@ -32,6 +33,7 @@ export class EditContactPage extends Component {
 				>
 					Delete Contact
 				</button>
+				<UserFooter />
 			</div>
 		);
 	}

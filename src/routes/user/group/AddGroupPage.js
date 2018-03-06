@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import UserNav from '../../../components/UserNav';
 import GroupForm from '../../../components/Groups/GroupForm';
 import { addGroup } from '../../../actions/groups';
+import UserFooter from '../../../components/UserFooter';
 
 export class AddGroupPage extends React.Component {
   onSubmit = (group) => {
@@ -18,6 +19,7 @@ export class AddGroupPage extends React.Component {
         <GroupForm
           onSubmit={this.onSubmit}
         />
+        <UserFooter />
       </div>
     );
   }
