@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "Tyquan Reddick",
+  "engines": {
+    "node": "8.9.1",
+    "npm": "5.6.0"
+  },
   "license": "MIT",
   "scripts": {
     "build:dev": "webpack",
