@@ -4,6 +4,7 @@ const socket = require('socket.io');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const session = require('express-session');
+const bcrypt = require('bcrypt');
 
 const app = express();
 const publicPath = path.join(__dirname, '..', 'public');
@@ -22,12 +23,12 @@ const db = mongoose.connection;
 //Bind connection to error event (to get notification of connection errors)
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
-const Admin = require('./server/routes/Admin');
-const Contact = require('./server/routes/Contact');
-const Group = require('./server/routes/Group');
-const Message = require('./server/routes/Message');
-const Numbers = require('./server/routes/Numbers');
-const User = require('./server/routes/User');
+const Admin = require('./routes/Admin');
+const Contact = require('./routes/Contact');
+const Group = require('./routes/Group');
+const Message = require('./routes/Message');
+const Numbers = require('./routes/Numbers');
+const User = require('./routes/User');
 
 app.use(session({
   secret: 'keysessionsaidding',

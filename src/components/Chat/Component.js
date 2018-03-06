@@ -7,7 +7,8 @@ class Chat extends Component {
 		this.state = {
 			username: '',
 			message: '',
-			messages: []
+			messages: [],
+			id: null
 		};
 		this.socket = io('localhost:3000');
 
@@ -16,15 +17,24 @@ class Chat extends Component {
 		});
 
 		const addMessage = data => {
-			this.setState({
-				username: data.author,
-				message: data.message,
-				messages: [...this.state.messages, data]
-			});
-			console.log("State:", this.state);
-		};
+            console.log(data);
+            this.setState({messages: [...this.state.messages, data]});
+            console.log(this.state.messages);
+        };
+
+        this.sendMessage = ev => {
+            ev.preventDefault();
+            this.socket.emit('SEND_MESSAGE', {
+                author: this.state.username,
+                message: this.state.message
+            })
+            this.setState({message: ''});
+
+        }
 		this.onFormSubmit = this.onFormSubmit.bind(this);
 	}
+
+	
 
 	onFormSubmit(e){
 		e.preventDefault();
@@ -35,6 +45,7 @@ class Chat extends Component {
 		});
 
 		e.target.elements.username.value = '';
+		e.target.elements.message.value = '';
 		e.target.elements.message.value = '';
 	}
 
@@ -51,7 +62,7 @@ class Chat extends Component {
 							<div className="messages">
 								{this.state.messages.map(message => {
 									return (
-										<div key={message}>
+										<div>
 											<p><b>{message.author}</b>: {message.message}    
 											<small><i>
 												{new Intl.DateTimeFormat('en-GB', {

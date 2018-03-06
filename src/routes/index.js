@@ -4,7 +4,7 @@ import createHistory from 'history/createBrowserHistory';
 
 import HomePage from './HomePage';
 import SignupPage from './SignupPage';
-import {LoginPage} from './LoginPage';
+import LoginPage from './LoginPage';
 //import AvailablePage from './AvailablePage';
 import AboutPage from './AboutPage';
 
