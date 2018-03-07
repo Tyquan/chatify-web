@@ -31,7 +31,7 @@ const Group = require('./routes/Group');
 const Message = require('./routes/Message');
 const Numbers = require('./routes/Numbers');
 const User = require('./routes/User');
-//const Videos = require('./public/src/components/Video/Videos.js');
+const Videos = require('../src/components/Video/Videos.js');
 
 app.use(session({
   secret: 'keysessionsaidding',
@@ -58,17 +58,17 @@ const server = app.listen(port, () => {
 
 const io = socket(server);
 
-// var peerServer = new PeerServer({ port: 9000, path: '/videos' });
+var peerServer = new PeerServer({ port: 9000, path: '/videos' });
 
-// peerServer.on('connection', function (id) {
-//   io.emit(Videos.USER_CONNECTED, id);
-//   console.log('User connected with #', id);
-// });
+peerServer.on('connection', function (id) {
+  io.emit(Videos.USER_CONNECTED, id);
+  console.log('User connected with #', id);
+});
 
-// peerServer.on('disconnect', function (id) {
-//   io.emit(Videos.USER_DISCONNECTED, id);
-//   console.log('With #', id, 'user disconnected.');
-// });
+peerServer.on('disconnect', function (id) {
+  io.emit(Videos.USER_DISCONNECTED, id);
+  console.log('With #', id, 'user disconnected.');
+});
 
 io.on('connection', (socket) => {
 	console.log("Socket Id:", socket.id);
