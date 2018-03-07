@@ -40,7 +40,8 @@ class Chat extends Component {
 		e.preventDefault();
 		const socket = io('localhost:3000');
 		socket.emit('SEND_MESSAGE', {
-			author: e.target.elements.username.value,
+			// author: e.target.elements.username.value,
+			author: "User_" + String(Math.floor(Math.random() * 10)),
 			message: e.target.elements.message.value
 		});
 
@@ -64,6 +65,7 @@ class Chat extends Component {
 									return (
 										<div>
 											<p><b>{message.author}</b>: {message.message}    
+											<br />
 											<small><i>
 												{new Intl.DateTimeFormat('en-GB', {
 													year: 'numeric', 
@@ -79,8 +81,6 @@ class Chat extends Component {
 						</div>
 						<div className="card-footer">
 							<form onSubmit={this.onFormSubmit}>
-								<input className="form-control" name="username" type="text" placeholder="Username"  />
-								<br />
 								<input className="form-control" name="message" type="text" placeholder="Type Your Message Here"  />
 								<br />
 								<button className="btn btn-primary form-control">Send</button>
