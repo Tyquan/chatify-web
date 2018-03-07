@@ -1,5 +1,6 @@
 const path = require('path');
 const express = require('express');
+const PeerServer = require('peer').PeerServer;
 const socket = require('socket.io');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -11,8 +12,8 @@ const publicPath = path.join(__dirname, '..', 'public');
 const port = process.env.PORT || 3000;
 
 // mlab connection 
-//const mongoUri = 'mongodb://Tyquan:Jamela17!@ds139278.mlab.com:39278/whatsvi';
-const mongoUri = 'mongodb://localhost/whatsvi';
+const mongoUri = 'mongodb://Tyquan:Jamela17!@ds139278.mlab.com:39278/whatsvi';
+//const mongoUri = 'mongodb://localhost/whatsvi';
 
 //const mongoUri = 'http://localhost/whatsvi'
 
@@ -30,6 +31,7 @@ const Group = require('./routes/Group');
 const Message = require('./routes/Message');
 const Numbers = require('./routes/Numbers');
 const User = require('./routes/User');
+//const Videos = require('./public/src/components/Video/Videos.js');
 
 app.use(session({
   secret: 'keysessionsaidding',
@@ -55,6 +57,18 @@ const server = app.listen(port, () => {
 });
 
 const io = socket(server);
+
+// var peerServer = new PeerServer({ port: 9000, path: '/videos' });
+
+// peerServer.on('connection', function (id) {
+//   io.emit(Videos.USER_CONNECTED, id);
+//   console.log('User connected with #', id);
+// });
+
+// peerServer.on('disconnect', function (id) {
+//   io.emit(Videos.USER_DISCONNECTED, id);
+//   console.log('With #', id, 'user disconnected.');
+// });
 
 io.on('connection', (socket) => {
 	console.log("Socket Id:", socket.id);
