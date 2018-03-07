@@ -22,7 +22,7 @@ export default () => (
 	        <Link className="nav-link" to="/login">Login</Link> <span className="sr-only">(current)</span>
 	      </li>
 	      <li className="nav-item">
-	        <Link className="nav-link" to="/about">About Us</Link>
+	        <Link className="nav-link" to="/about">Features</Link>
 	      </li>
 	    </ul>
 	  </div>
