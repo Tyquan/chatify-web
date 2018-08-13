@@ -8,10 +8,12 @@ export default () => (
 	<div>
 		<UserNav />
 		<br />
-		<h1 className="text-center">Your Groups</h1>
-		<hr />
-		<GroupListFilters />
-		<GroupList />
+		<div className="container">
+			<h1 className="text-center">Your Groups</h1>
+			<hr />
+			<GroupListFilters />
+			<GroupList />
+		</div>
 		<UserFooter />
 	</div>
 );

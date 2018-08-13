@@ -19,25 +19,16 @@ const SignupPage = () => {
 		    	</div>
 		    	<div className="col">
 		    		<form>
-		    			<label>First Name</label>
-		    			<input type="text" className="form-control" />
-		    			<br />
-		    			<label>Last Name</label>
-		    			<input type="text" className="form-control" />
-		    			<br />
 		    			<label>Email</label>
 		    			<input type="text" className="form-control" />
+		    			<br />
+		    			<label>Password</label>
+		    			<input type="password" className="form-control" />
 		    			<br />
 		    			<label>Do You have a Phone Number</label> 
 		    			<input type="checkbox" />
 		    			<br />
 		    			<label>Phone Number</label>
-		    			<input type="text" className="form-control" />
-		    			<br />
-		    			<label>Address</label>
-		    			<input type="text" className="form-control" />
-		    			<br />
-		    			<label>Address 2</label>
 		    			<input type="text" className="form-control" />
 		    			<br />
 		    			<div className="row">

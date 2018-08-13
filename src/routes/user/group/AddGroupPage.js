@@ -15,10 +15,12 @@ export class AddGroupPage extends React.Component {
       <div>
         <UserNav />
         <br />
-        <h1>Add Group</h1>
-        <GroupForm
-          onSubmit={this.onSubmit}
-        />
+        <div className="container">
+          <h1>Add Group</h1>
+          <GroupForm
+            onSubmit={this.onSubmit}
+          />
+        </div>
         <UserFooter />
       </div>
     );

@@ -7,9 +7,6 @@ export default class GroupForm extends React.Component {
 		this.state = {
 			name: props.group ? props.group.name : '' ,
 			description: props.group ? props.group.description : '' ,
-			memberOne: props.group ? props.group.memberOne : '' ,
-			memberTwo: props.group ? props.group.memberTwo : '' ,
-			memberThree: props.group ? props.group.memberThree : '' ,
 			createdAt: moment(),
 			error: ''
 		};
@@ -22,18 +19,6 @@ export default class GroupForm extends React.Component {
 		const description = e.target.value;
 		this.setState(() => ({ description }));
 	}
-	onMemberOneChange = (e) => {
-		const memberOne = e.target.value;
-		this.setState(() => ({ memberOne }));
-	}
-	onMemberTwoChange = (e) => {
-		const memberTwo = e.target.value;
-		this.setState(() => ({ memberTwo }));
-	}
-	onMemberThreeChange = (e) => {
-		const memberThree = e.target.value;
-		this.setState(() => ({ memberThree }));
-	}
 	
 	onSubmit = (e) => {
 		e.preventDefault();
@@ -44,7 +29,6 @@ export default class GroupForm extends React.Component {
 			this.props.onSubmit({
 				name: this.state.name,
 				description: this.state.description,
-				members: this.state.members,
 				createdAt: this.state.createdAt.valueOf(),
 			});
 			console.log('Submitted');
@@ -65,34 +49,13 @@ export default class GroupForm extends React.Component {
 			        	onChange={this.onNameChange}
 			        />
 			        <br />
-			        <input 
+			        <textarea
 			        	type="text" 
 			        	className="form-control"
 			        	placeholder="description"
 			        	value={this.state.description}
 			        	onChange={this.onDescriptionChange}
-			        />
-			        <br />
-			        <input 
-			        	type="text" 
-			        	placeholder="Member 1"
-			        	value={this.state.memberOne}
-			        	onChange={this.onMemberOneChange}
-			        />
-			        <br />
-			        <input 
-			        	type="text" 
-			        	placeholder="Member 2"
-			        	value={this.state.memberTwo}
-			        	onChange={this.onMemberTwoChange}
-			        />
-			        <br />
-			        <input 
-			        	type="text" 
-			        	placeholder="Member 3"
-			        	value={this.state.memberThree}
-			        	onChange={this.onMemberThreeChange}
-			        />
+			        ></textarea>
 			        <br />
 			        <br />
 			        <button

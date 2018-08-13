@@ -15,10 +15,12 @@ export class AddContactPage extends React.Component {
       <div>
         <UserNav />
         <br />
-        <h1>Add Contact</h1>
-        <ContactForm
-          onSubmit={this.onSubmit}
-        />
+        <div className="container">
+          <h1>Add Contact</h1>
+          <ContactForm
+            onSubmit={this.onSubmit}
+          />
+        </div>
         <UserFooter />
       </div>
     );

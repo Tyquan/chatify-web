@@ -1,5 +1,44 @@
 import React, {Component} from 'react';
 import io from 'socket.io-client';
+// import socket from 'socket.io';
+// const port = process.env.PORT;
+
+// const sock = socket(port);
+
+// var peerServer = new PeerServer({ port: 9000, path: '/videos' });
+
+// peerServer.on('connection', function (id) {
+//   io.emit(Videos.USER_CONNECTED, id);
+//   console.log('User connected with #', id);
+// });
+
+// peerServer.on('disconnect', function (id) {
+//   io.emit(Videos.USER_DISCONNECTED, id);
+//   console.log('With #', id, 'user disconnected.');
+// });
+
+// sock.on('connection', (socket) => {
+// 	console.log("Socket Id:", socket.id);
+
+// 	socket.on('SEND_MESSAGE', (data) => {
+// 		bcrypt.hash(data.message, 10, (err, hash) => {
+// 			//data.message = hash;
+// 			console.log("Sent Message:", data.message);
+// 			console.log("Sent Hash:", hash);
+// 			bcrypt.compare(data.message, hash, (err, res) => {
+// 			  if(res) {
+// 			   // Passwords match
+// 			   console.log("Everythings a Go!");
+// 			   sock.emit('RECEIVE_MESSAGE', data);
+// 			  } else {
+// 			   // Passwords don't match
+// 			   console.log("ERROR!!");
+// 			  } 
+// 			});
+			
+// 		});
+// 	});
+// });
 
 class Chat extends Component {
 	constructor(props){
@@ -28,7 +67,7 @@ class Chat extends Component {
                 author: this.state.username,
                 message: this.state.message
             })
-            this.setState({message: ''});
+            this.setState({author: '', message: ''});
 
         }
 		this.onFormSubmit = this.onFormSubmit.bind(this);

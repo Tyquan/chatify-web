@@ -23,32 +23,3 @@ const jsx = (
 );
 
 ReactDOM.render(jsx, document.getElementById('root'));
-
-// let hasRendered = false;
-// const renderApp = () => {
-//   if (!hasRendered) {
-//     ReactDOM.render(jsx, document.getElementById('root'));
-//     hasRendered = true;
-//   }
-// };
-
-// ReactDOM.render(<p>Loading...</p>, document.getElementById('root'));
-
-// firebase.auth().onAuthStateChanged((user) => {
-//   if (user) {
-//     store.dispatch(login(user.uid));
-//     store.dispatch(startSetContacts()).then(() => {
-//       renderApp();
-//       if (history.location.pathname === '/') {
-//         history.push('/user/contacts');
-//       }
-//     });
-//   } else {
-//     store.dispatch(logout());
-//     renderApp();
-//     history.push('/');
-//   }
-// });
-
-
-//ReactDOM.render(jsx, document.getElementById('root'));
